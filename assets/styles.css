@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #d4af37;
+    --dark: #0f0e0e;
+    --cream: #f5f1e8;
+    --text: #e8e3d3;
+    --accent: #8b7355;
+    --success: #6b9080;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f0e0e 0%, #1a1817 100%);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.oracle-header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 40px;
+}
+
+.oracle-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+.oracle-header p {
+    font-size: 0.95rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Date Input */
+.date-input-section {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.date-input-section input {
+    padding: 12px 16px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid var(--gold);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.date-input-section input::placeholder {
+    color: var(--accent);
+}
+
+.date-input-section button {
+    padding: 12px 32px;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.date-input-section button:hover {
+    background: #e5c158;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Reading Container */
+.reading-container {
+    background: rgba(26, 24, 23, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.reading-date {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Tabs Navigation */
+.tabs-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.1);
+    padding-bottom: 15px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    color: var(--text);
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tab-button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.tab-button.active {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+}
+
+/* Channel Content */
+.channel-content {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reading Sections */
+.reading-section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.reading-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+.reading-text strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+/* Mirror Section */
+.mirror-section {
+    background: rgba(212, 175, 55, 0.08);
+    border-left: 4px solid var(--gold);
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+.mirror-section .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+    color: var(--accent);
+}
+
+.loading span {
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* History Sidebar */
+.history-sidebar {
+    background: rgba(26, 24, 23, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.history-sidebar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+.oracle-footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 2px solid rgba(212, 175, 55, 0.2);
+    margin-top: 50px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .oracle-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .reading-container {
+        padding: 25px;
+    }
+
+    .tabs-nav {
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Utility */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.divider {
+    height: 1px;
+    background: rgba(212, 175, 55, 0.1);
+    margin: 25px 0;
+}
